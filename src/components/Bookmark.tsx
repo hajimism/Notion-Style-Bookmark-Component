@@ -2,6 +2,7 @@
 import { VFC } from "react";
 import { useOgp } from "../hooks/useOgp";
 import { OgpData } from "../types";
+import { Loading } from "./Loading";
 
 interface BookmarkProps {
   ogp: OgpData;
@@ -43,7 +44,7 @@ export const Bookmark: VFC<{ url: string }> = ({ url }) => {
   // for debug
   if (!error) console.log(error);
 
-  if (!data) return <></>;
+  if (!data) return <Loading />;
 
   return <BookmarkView ogp={data} />;
 };

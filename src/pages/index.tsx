@@ -26,7 +26,7 @@ const Home: NextPage = () => {
             <BookmarkView ogp={ogp} key={i.toString()} />
           ))}
         </div>
-        <div className="max-w-2xl">
+        <div className="w-full max-w-2xl">
           <h1 className="text-2xl text-center">通信が発生する方</h1>
           {URL_LIST.map((url, i) => (
             <Bookmark url={url} key={i.toString()} />
