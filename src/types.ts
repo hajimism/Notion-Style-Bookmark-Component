@@ -1,7 +1,7 @@
 export type OgpData = {
-  title: string;
-  description: string;
-  faviconUrl: string;
-  pageUrl: string;
-  ogImgUrl: string;
+  pageUrl: string; // ページのURLそのもの
+  title: string; // ページタイトル
+  description: string; // ページの説明
+  faviconUrl: string; // ファビコンのURL
+  ogImgUrl: string; // OGP画像のURL
 };
