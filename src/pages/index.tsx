@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Bookmark, BookmarkView } from "../components/Bookmark";
-import { mockOgpDataList } from "../mocks";
+import { Bookmark } from "../components/Bookmark";
 
 const URL_LIST = [
   "https://beta.reactjs.org/learn/state-as-a-snapshot",
   "https://beta.reactjs.org/learn/state-as-a-snapshot",
+  // "https://www.fukuoka-airport.jp/",
   "https://通信エラーが起きてほしいな.com",
 ];
 
@@ -18,18 +18,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex overflow-scroll justify-evenly items-center p-2 mx-auto h-screen">
-        <div className="max-w-2xl">
-          <h1 className="text-2xl text-center">通信が発生しない方</h1>
-
-          {mockOgpDataList.map((ogp, i) => (
-            <BookmarkView ogp={ogp} key={i.toString()} />
-          ))}
-        </div>
-        <div className="w-full max-w-2xl">
-          <h1 className="text-2xl text-center">通信が発生する方</h1>
+      <main className="overflow-y-scroll p-12 m-auto max-w-screen-md h-screen">
+        <div className="h-full">
           {URL_LIST.map((url, i) => (
-            <Bookmark url={url} key={i.toString()} />
+            <>
+              <Bookmark url={url} key={i.toString()} />
+              <div className="h-4"></div>
+            </>
           ))}
         </div>
       </main>
