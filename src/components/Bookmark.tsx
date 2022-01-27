@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { VFC } from "react";
+import { useOgp } from "../hooks/useOgp";
 import { OgpData } from "../types";
 
 interface BookmarkProps {
@@ -34,4 +35,15 @@ export const BookmarkView: VFC<BookmarkProps> = ({ ogp }) => {
       </article>
     </a>
   );
+};
+
+export const Bookmark: VFC<{ url: string }> = ({ url }) => {
+  const { data, error } = useOgp(url);
+
+  // for debug
+  if (!error) console.log(error);
+
+  if (!data) return <></>;
+
+  return <BookmarkView ogp={data} />;
 };

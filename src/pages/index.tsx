@@ -1,7 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { BookmarkView } from "../components/Bookmark";
+import { Bookmark, BookmarkView } from "../components/Bookmark";
 import { mockOgpDataList } from "../mocks";
+
+const URL_LIST = [
+  "https://beta.reactjs.org/learn/state-as-a-snapshot",
+  "https://beta.reactjs.org/learn/state-as-a-snapshot",
+  "https://通信エラーが起きてほしいな.com",
+];
 
 const Home: NextPage = () => {
   return (
@@ -12,10 +18,20 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col justify-evenly p-2 mx-auto max-w-2xl h-screen">
-        {mockOgpDataList.map((ogp) => (
-          <BookmarkView ogp={ogp} key={ogp.title} />
-        ))}
+      <main className="flex overflow-scroll justify-evenly items-center p-2 mx-auto h-screen">
+        <div className="max-w-2xl">
+          <h1 className="text-2xl text-center">通信が発生しない方</h1>
+
+          {mockOgpDataList.map((ogp, i) => (
+            <BookmarkView ogp={ogp} key={i.toString()} />
+          ))}
+        </div>
+        <div className="max-w-2xl">
+          <h1 className="text-2xl text-center">通信が発生する方</h1>
+          {URL_LIST.map((url, i) => (
+            <Bookmark url={url} key={i.toString()} />
+          ))}
+        </div>
       </main>
     </div>
   );
