@@ -19,6 +19,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="overflow-y-scroll p-12 m-auto max-w-screen-md h-screen">
+        <h1 className="p-4 text-2xl font-bold text-center">
+          Notion Style Bookmark Component
+        </h1>
         <div className="h-full">
           {URL_LIST.map((url, i) => (
             <>
