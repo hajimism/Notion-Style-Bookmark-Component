@@ -4,8 +4,7 @@ import { Bookmark } from "../components/Bookmark";
 
 const URL_LIST = [
   "https://beta.reactjs.org/learn/state-as-a-snapshot",
-  "https://beta.reactjs.org/learn/state-as-a-snapshot",
-  // "https://www.fukuoka-airport.jp/",
+  "https://www.fukuoka-airport.jp/",
   "https://通信エラーが起きてほしいな.com",
 ];
 
