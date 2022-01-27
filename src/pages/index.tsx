@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { BookmarkView } from "../components/Bookmark";
+import { mockOgpDataList } from "../mocks";
 
 const Home: NextPage = () => {
   return (
@@ -10,7 +12,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main></main>
+      <main className="flex flex-col justify-evenly p-2 mx-auto max-w-2xl h-screen">
+        {mockOgpDataList.map((ogp) => (
+          <BookmarkView ogp={ogp} key={ogp.title} />
+        ))}
+      </main>
     </div>
   );
 };
